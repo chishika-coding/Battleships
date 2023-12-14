@@ -36,6 +36,6 @@ In VSCode open the battleships_project folder. Select Testing from the menu on t
 
 
 # Details
-This project was the coursework task for ECM1400 Comp Sci BSC University of Exeter.
+This project was the coursework task for ECM1400 Comp Sci BSC University of Exeter. [GitHub Repository](https://github.com/bakapaka/Battleships)
 
 
