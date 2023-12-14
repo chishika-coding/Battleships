@@ -9,8 +9,9 @@ Stretch Goals Achieved
 The AI opponent can be customised to be at different levels of difficulty, ranging from Easy, Medium and Hard. Easy is the default used for the web interface, which can be modified by altering the related functions manually in the code. Medium will prevent the AI opponent from making repeat moves by tracking it the generate_attack function. Hard will change the random placements of ships in place_battleships to be more strategic, larger battleships on the outskirts and smaller ones near the centre.
 
 # Prerequisites
+Python version for development: Python 3.11 (64-bit)
 Ensure you have the following prerequisites installed:
--Python version for development: Python 3.11 (64-bit)
+- Python 3.11 (64-bit)
 
 Dependencies are in the requirements.txt file.
 
