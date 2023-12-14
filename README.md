@@ -22,10 +22,12 @@ To install the dependencies in VSCode, open the terminal and execute
 
 # Getting Started Tutorial
 
-The program can be played VSCode terminal, or alternatively on a local server with a web interface with grids to visualise board states. To begin, open battleships_project folder using VSCode or similar software. 
-From here, to play against an AI opponent, run the mp_game_engine.py. 
-To access the version with web interface, run main.py and find the URl to the local server the terminal outputs. This should look like http://127.0.0.1:5000. Add /placement to this URl you are given (e.g. http://127.0.0.1:5000/placement) and open in an incognito tab. 
-To change difficulty algorithms for the web interface version, in main.py alter the function generate_attack and place_battleships by adding 'Medium' or 'Hard' to the list of arguments.
+The program can be played VSCode terminal, or alternatively on a local server with a web interface with grids to visualise board states. To begin, 
+- Open battleships_project folder using VSCode or similar software. 
+- From here, to play against an AI opponent, run the mp_game_engine.py. 
+- To access the version with web interface, run main.py and find the URl to the local server the terminal outputs. This should look like http://127.0.0.1:5000.
+- Add /placement to this URl you are given (e.g. http://127.0.0.1:5000/placement) and open in an incognito tab. 
+- To change difficulty algorithms for the web interface version, in main.py alter the function generate_attack and place_battleships by adding 'Medium' or 'Hard' to the list of arguments.
 
 # Testing
 - In VSCode open the battleships_project folder. 
@@ -36,6 +38,7 @@ The tests should now show up on the Testing section and can be run all at once o
 
 
 # Developer Deconstruction
+When developing the web interface, I decided to use a separate json file from placement named web_placement to hold the request from the Flask server.
 
 
 # Details
