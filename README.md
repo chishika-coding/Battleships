@@ -29,8 +29,8 @@ The program can be played VSCode terminal, or alternatively on a local server wi
 - Open battleships_project folder using VSCode or similar software. 
 - From here, to play against an AI opponent, run the mp_game_engine.py. 
 - To access the version with web interface, run main.py and find the URl to the local server the terminal outputs. This should look like http://127.0.0.1:5000.
-- Add /placement to this URl you are given (e.g. http://127.0.0.1:5000/placement) and open in an incognito tab. 
-- To change difficulty algorithms for the web interface version, in main.py alter the function generate_attack and place_battleships by adding 'Medium' or 'Hard' to the list of arguments.
+- Add /placement to the given URL (e.g. http://127.0.0.1:5000/placement) and open in an incognito tab. 
+- To change difficulty algorithms for the web interface version, in main.py alter the function generate_attack and place_battleships by adding 'Medium' or 'Hard' to the list of arguments (default value is 'Easy').
 
 # Testing
 - In VSCode open the battleships_project folder. 
