@@ -17,8 +17,9 @@ Dependencies are in the requirements.txt file.
 
 # Installation and Running
 
-To install the dependencies in VSCode, open the terminal and execute
-`python3.11 -m pip install -r requirements.txt`
+To install the dependencies in VSCode,
+- Open the battleships_project folder in VSCode.
+- Execute `python3.11 -m pip install -r requirements.txt`
 
 # Getting Started Tutorial
 
@@ -38,10 +39,13 @@ The tests should now show up on the Testing section and can be run all at once o
 
 
 # Developer Deconstruction
+The components module contains many of the key functions that are used throughout. I created an additional function called display_board here as opposed to in game_engine as it allowed me to visualise and debug all of my modules and import it all from the same module as opposed to several.
 When developing the web interface, I decided to use a separate json file from placement named web_placement to hold the request from the Flask server.
 
 
 # Details
-This project was the coursework task for ECM1400 Comp Sci BSC University of Exeter. [GitHub Repository](https://github.com/bakapaka/Battleships)
-
+[GitHub Repository](https://github.com/bakapaka/Battleships)
+[Link to the License](https://github.com/bakapaka/Battleships/blob/main/LICENSE)
+## Acknowledgements
+This project was the coursework task for ECM1400 Comp Sci BSC University of Exeter.
 
