@@ -1,5 +1,7 @@
 import pytest
-from game_engine import cli_coordinates_input, initialise_board, create_battleships
+import random
+from components import place_battleships_random
+from mp_game_engine import initialise_board, create_battleships, place_battleships, generate_attack
 import tests.test_helper_functions as thf
 
 testReport = thf.TestReport("test_report.txt")
@@ -33,65 +35,71 @@ def test_create_battleships_returns_dict():
         assert isinstance(ships, dict)
 
     except AssertionError:
-        pytest.TestReport.add_message("create_battleships function does not return dictionary")
+        testReport.add_message("create_battleships function does not return dictionary")
         pytest.fail("create_battleships function does not return dictionary")
 
 
-def test_create_battleships_dict_key_str_and_val_int():
+def test_place_battleships_ships_placed():
     """
-    Test if the create_battleships function's dictionary has a str key and int value.
+    Tests if the place_battleships function places all the ships properly.
     """
     try:
-
+        board = initialise_board()
         ships = create_battleships()
+        place_battleships(board, ships, 'random')
+        for x in range(len(board)):
+            for y in range(len(board)):
 
-        assert isinstance(list(ships.keys())[0], type('str'))
+                if board[y][x] in ships:
+                    ships.update({board[y][x]: (ships.get(board[y][x])-1)})
+                    if ships.get(board[y][x]) == 0:
+                        ships.pop(board[y][x])
 
-        try:
-            assert isinstance(list(ships.values())[0], type('int'))
-
-        except AssertionError:
-            pytest.TestReport.add_message("create_battleships function dictionary doesn't have int values")
-            pytest.fail("create_battleships function dictionary doesn't have int values")
+        assert ships == {}
 
     except AssertionError:
-        pytest.TestReport.add_message("create_battleships function dictionary doesn't have str keys")
-        pytest.fail("create_battleships function dictionary doesn't have a str key")
+        testReport.add_message("place_battleships function does not place all the ships on the board")
+        pytest.fail("place_battleships function does not place all the ships on the board")
 
-
-def test_cli_coordinates_input_is_tuple(monkeypatch):
+def test_place_battleships_random_hard_with_different_board_size():
     """
-    Test if the cli_coordinates_input function returns a tuple x,y.
+    Tests if the placement_battleships_random when run with algorithm 'Hard' can place ships
+    in the correct areas for the algorithm for varying board sizes.
     """
     try:
-        inputs = iter(['5','6'])
-        monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-        coordinates = cli_coordinates_input()
+        size = random.randint(10, 30)
+        board = initialise_board(size)
+        ships = create_battleships()
+        place_battleships_random(board, ships, 'Hard')
+        #Battleships greater than or equal to 4 should be in the outer 
 
-        assert isinstance(coordinates, tuple)
+        assert 0 <= coordinates[0] <= (size-1)
+        try:
+            assert 0 <= coordinates[1] <= (size-1)
+        except AssertionError:
+            testReport.add_message("generate_attack function does not generate valid y coordinate")
+            pytest.fail("generate_attack function does not generate valid y coordinate")
 
     except AssertionError:
-        pytest.TestReport.add_message("cli_coordinates_input function does not return a tuple")
-        pytest.fail("cli_coordinates_input function does not return a tuple")
+        testReport.add_message("generate_attack function does not generate valid x coordinate")
+        pytest.fail("generate_attack function does not generate valid x coordinate")
 
-def test_cli_coordinates_x_and_y_are_int(monkeypatch):
+
+def test_generate_attack_with_different_board_size():
     """
-    Test if the cli_coordinates_input function return of a tuple (x, y) are both integers.
+    Tests if the generate_attack function can generate valid coordinates for differing board sizes.
     """
     try:
-        inputs = iter(['1','10'])
-        monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-        coordinates = cli_coordinates_input()
+        size = random.randint(10, 30)
+        coordinates = generate_attack(size)
 
-        assert isinstance(coordinates[0], int)
-
+        assert 0 <= coordinates[0] <= (size-1)
         try:
-            assert isinstance(coordinates[1], int)
-
+            assert 0 <= coordinates[1] <= (size-1)
         except AssertionError:
-            pytest.TestReport.add_message("cli_coordinates_input function does not return integers for y")
-            pytest.fail("cli_coordinates_input function does not return integers for y")
+            testReport.add_message("generate_attack function does not generate valid y coordinate")
+            pytest.fail("generate_attack function does not generate valid y coordinate")
 
     except AssertionError:
-        pytest.TestReport.add_message("cli_coordinates_input function does not return integers for x")
-        pytest.fail("cli_coordinates_input function does not return integers for x")
+        testReport.add_message("generate_attack function does not generate valid x coordinate")
+        pytest.fail("generate_attack function does not generate valid x coordinate")
