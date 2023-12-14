@@ -15,7 +15,7 @@ def attack(coordinates: tuple[int, int], board: Boardtype, battleships: dict[str
     '''
     x, y = int(coordinates[0]), int(coordinates[1])
     if board[y][x] is not None:
-        print('\nHit!\n')
+        print('\nHit!')
 
         battleships.update({board[y][x]: (battleships.get(board[y][x])-1)})
         if battleships.get(board[y][x]) == 0:
