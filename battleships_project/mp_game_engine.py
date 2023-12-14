@@ -44,8 +44,15 @@ def ai_opponent_game_loop() -> None:
     BBBB   AAAAA    T        T     L       EEEE    SSS    HHHHH    I    PPPPP    SSSS
     B   B  A   A    T        T     L       E          SS  H   H    I    P            SS
     BBBB   A   A    T        T     LLLLLL  EEEEE  SSSSS   H   H  IIIII  P        SSSSS    Multiplayer Edition
+
+
+    Welcome to Battleships
+
+    [Using placements from placement.json file]
+    [Ensure you change this until satisfied]
+
     """)
-    print('\n      Welcome to Battleships \n\n')
+
     algorithm = None
     while algorithm not in ('Easy', 'Medium', 'Hard'):
         if algorithm is not None:
