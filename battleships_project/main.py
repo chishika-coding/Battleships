@@ -44,7 +44,7 @@ def placement_interface():
 
         board2 = initialise_board(board_size)
         ships2 = create_battleships()
-        place_battleships(board2, ships2, 'random', 'Hard')
+        place_battleships(board2, ships2, 'random')
         print('\nInitialised board and ships for computer \n')
 
         return jsonify({"message": "Success"})
@@ -64,7 +64,7 @@ def process_attack():
         print('\nPlayer selected', coordinates)
         hit = attack(coordinates, board2, ships2)
         
-        aicoordinates = generate_attack('Hard')
+        aicoordinates = generate_attack()
         print('\nComputer selected', aicoordinates)
         attack(aicoordinates, board, ships)
         
