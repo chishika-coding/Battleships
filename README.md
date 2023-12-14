@@ -29,7 +29,13 @@ To change difficulty algorithms for the web interface version, in main.py alter 
 
 # Testing
 ## Step 1
-In VSCode open the battleships_project folder. Select Testing from the menu on the left, select Configure Python Tests, select pytest framework and select the tests directory. The tests should now show up on the Testing section and can be run all at once or individually.
+In VSCode open the battleships_project folder. 
+## Step 2
+Select Testing from the menu on the left, select Configure Python Tests 
+## Step 3
+Select pytest framework and select the tests directory. 
+
+The tests should now show up on the Testing section and can be run all at once or individually.
 
 
 # Developer Deconstruction
