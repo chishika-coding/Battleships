@@ -41,8 +41,9 @@ The tests should now show up on the Testing section and can be run all at once o
 
 
 # Developer Deconstruction
-The components module contains many of the key functions that are used throughout. I created an additional function called display_board here as opposed to in game_engine as it allowed me to visualise and debug all of my modules and import it all from the same module as opposed to several.
-When developing the web interface, I decided to use a separate json file from placement named web_placement to hold the request from the Flask server.
+Going through the project I split it into the key functions that needed to be made and the modules that would implement them to create the program. The key functions were required to create more complex functions that would be needed later. Components.py would handle the key functions, with game_engine.py containing other important functions that use functions from components.py to make them work. The mp_game_engine.py and main.py were the modules using these functions to create the final programs.
+
+Some other design decisions I made was to have an additional function called display_board in components.py as opposed to game_engine.py as it allowed me to visualise and debug all of my modules and import it all from the same module as opposed to several. When developing main.py, I decided that using a separate json file from placement named web_placement to hold the request from the Flask server would be better to avoid sharing json files and overwriting a user's preferred custom placements.
 
 
 # Details
