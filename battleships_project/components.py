@@ -29,15 +29,16 @@ def create_battleships(filename: str = "battleships.txt") -> dict[str, int]:
 
 
 def place_battleships(board: Boardtype, ships: dict[str, int],
-                      style: str = "simple", algorithm: str = "Easy") -> None:
+                      style: str = "simple", algorithm: str = "Easy",
+                      battleshipjson: str = 'placement.json') -> Boardtype:
     '''Used to choose the right placement function to call'''
 
-    if style == 'custom':
-        place_battleships_custom(board, ships)
+    if style == 'simple':
+        place_battleships_simple(board, ships)
     elif style =='random':
         place_battleships_random(board, ships, algorithm)
     else:
-        place_battleships_simple(board, ships)
+        place_battleships_custom(board, ships, battleshipjson)
 
     return board
 
@@ -56,6 +57,8 @@ def place_battleships_random(board: Boardtype, ships: dict[str, int],
     Places the battleships in a random pattern inside the board. This has different
     difficulty levels chosen by the algorithm that makes the placements more strategic.
     '''
+    size = len(board) - 1
+
     for current in ships:
         validplacement = False
         while not validplacement:
@@ -72,36 +75,36 @@ def place_battleships_random(board: Boardtype, ships: dict[str, int],
                         #shorter battleships near the centre area to be hidden, and the longer ones
                         #near the outskirts.
 
-                        x = random.randint((round(len(board)/3)), (9-ships.get(current)))
-                        y =random.randint(0,9)
-                        if (y > (round(len(board)/3)) and
-                            y < (len(board) - round(len(board)/3))):
+                        x = random.randint(0, (size-ships.get(current)))
+                        y =random.randint(0,size)
+                        if ((round(size/3)) <= y <=
+                            (size - round(size/3))):
                             validplacement = False
 
                     elif ships.get(current) < 4:
-                        x = random.randint((round(len(board)/4)), (9-ships.get(current)))
-                        y =random.randint((round(len(board)/4)),
-                                          (len(board) - round(len(board)/4)))
+                        x = random.randint(0, (size-ships.get(current)))
+                        y =random.randint((round(size/4)),
+                                          (size - round(size/4)))
                 else:
-                    x =random.randint(0,(9-ships.get(current)))
-                    y =random.randint(0,9)
+                    x =random.randint(0,(size-ships.get(current)))
+                    y =random.randint(0,size)
 
             elif rotation == 'v':
                 if algorithm == "Hard":
                     if ships.get(current) > 3:
-                        y = random.randint((round(len(board)/3)), (9-ships.get(current)))
-                        x =random.randint(0,9)
-                        if (x > (round(len(board)/3)) and
-                            x < (len(board) - round(len(board)/3))):
+                        y = random.randint(0, (size-ships.get(current)))
+                        x =random.randint(0,size)
+                        if ((round(size/3)) <= x <=
+                            (size - round(size/3))):
                             validplacement = False
 
                     elif ships.get(current) < 4:
-                        y = random.randint((round(len(board)/4)), (9-ships.get(current)))
-                        x =random.randint((round(len(board)/4)),
-                                          (len(board) - round(len(board)/4)))
+                        y = random.randint(0, (size-ships.get(current)))
+                        x =random.randint((round(size/4)),
+                                          (size - round(size/4)))
                 else:
-                    y =random.randint(0,(9-ships.get(current)))
-                    x =random.randint(0,9)
+                    y =random.randint(0,(size-ships.get(current)))
+                    x =random.randint(0,size)
 
 
             validx, validy = x, y
@@ -127,10 +130,11 @@ def place_battleships_random(board: Boardtype, ships: dict[str, int],
                     if rotation == 'v':
                         y += 1
 
-def place_battleships_custom(board: Boardtype, ships: dict[str, int]) -> None:
+def place_battleships_custom(board: Boardtype, ships: dict[str, int],
+                             battleshipjson: str) -> None:
     '''Opens the placement.json and uses it to decide where to place the battleships'''
 
-    with open('placement.json') as shipjson:
+    with open(battleshipjson) as shipjson:
         shipfile = json.load(shipjson)
 
     for shipname, shipdata in shipfile.items():
@@ -161,5 +165,5 @@ def place_battleships_custom(board: Boardtype, ships: dict[str, int]) -> None:
 if __name__ == '__main__':
     userboard = initialise_board()
     userships = create_battleships()
-    place_battleships(userboard, userships, "random")
+    place_battleships(userboard, userships, "custom", 'Hard')
     display_board(userboard)

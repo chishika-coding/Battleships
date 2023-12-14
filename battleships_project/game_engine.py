@@ -3,7 +3,9 @@ Game Engine used to create a draft of 1-player battleship with no opponent.
 Functions from here are used in later modules
 '''
 from components import initialise_board, create_battleships, place_battleships, display_board
+
 Boardtype = list[list[str | None]]
+
 def attack(coordinates: tuple[int, int], board: Boardtype, battleships: dict[str, int])-> bool:
     '''
     Checks if the board supplied to it has a battleship at tile where the coordinates
