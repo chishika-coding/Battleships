@@ -10,6 +10,7 @@ The AI opponent can be customised to be at different levels of difficulty, rangi
 
 # Prerequisites
 Python version for development: Python 3.11 (64-bit)
+
 Ensure you have the following prerequisites installed:
 - Python 3.11 (64-bit)
 
