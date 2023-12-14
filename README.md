@@ -28,12 +28,9 @@ To access the version with web interface, run main.py and find the URl to the lo
 To change difficulty algorithms for the web interface version, in main.py alter the function generate_attack and place_battleships by adding 'Medium' or 'Hard' to the list of arguments.
 
 # Testing
-## Step 1
-In VSCode open the battleships_project folder. 
-## Step 2
-Select Testing from the menu on the left, select Configure Python Tests 
-## Step 3
-Select pytest framework and select the tests directory. 
+- In VSCode open the battleships_project folder. 
+- Select Testing from the menu on the left, select Configure Python Tests 
+- Select pytest framework and select the tests directory. 
 
 The tests should now show up on the Testing section and can be run all at once or individually.
 
