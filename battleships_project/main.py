@@ -29,13 +29,13 @@ def placement_interface():
         return render_template("placement.html", ships = ships, board_size = board_size)
 
     if request.method == 'POST':
-        data = request.get_json()
+        placement = request.get_json()
         print('\nOpening json and saving data from POST at placement.html \n')
-        with open('placement.json', 'w', encoding="utf-8") as file:
-            json.dump(data, file, indent=4)
+        with open('web_placement.json', 'w', encoding="utf-8") as file:
+            json.dump(placement, file, indent=4)
         print('Finished with json')
         board = initialise_board(board_size)
-        place_battleships(board, ships, 'custom')
+        place_battleships(board, ships, 'custom', 'web_placement.json')
         print('\nInitialised board and ships for player \n')
         #display_board(board)
 
