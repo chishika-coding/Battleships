@@ -14,14 +14,14 @@ Python version for development: Python 3.11 (64-bit)
 Ensure you have the following prerequisites installed:
 - Python 3.11 (64-bit)
 
-Dependencies are in the requirements.txt file.
+Dependencies are in the requirements.txt file. For development, use the dev-requirements.txt file.
 
 
 # Installation and Running
 
 To install the dependencies in VSCode,
 - Open the battleships_project folder in VSCode.
-- Execute `python3.11 -m pip install -r requirements.txt`
+- Execute `python3.11 -m pip install -r requirements.txt` or `python3.11 -m pip install -r dev-requirements.txt`
 
 # Getting Started Tutorial
 
