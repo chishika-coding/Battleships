@@ -1,7 +1,24 @@
 import setuptools
 
-import sys
-from pprint import pprint
+with open('README.md', 'r') as fh:
+    long_description = fh.read()
 
-# Print the current Python path
-pprint(sys.path)
+setuptools.setup(
+    name='battleships-pkg-jason.grggg',
+    version='0.0.1',
+    author ='jgrg',
+    author_email="jg988@exeter.ac.uk",
+    description='A program to play the game Battleships against a computer',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/bakapaka/Battleships",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'License :: MIT License',
+        'Operating System ::OS Independent',
+    ],
+    python_requires='>=3.11',
+
+    
+)
