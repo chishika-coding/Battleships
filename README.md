@@ -51,6 +51,8 @@ Some other design decisions I made was to have an additional function called dis
 
 [Link to the License](https://github.com/bakapaka/Battleships/blob/main/LICENSE)
 
+[Link to Sphinx Documentation](http://htmlpreview.github.io/?https://github.com/bakapaka/Battleships/blob/main/docs/_build/html/index.html)
+
 [Link to test package on pyPI](https://test.pypi.org/project/battleships-pkg-jason.grggg/0.0.1/)
 ## Acknowledgements
 This project was the coursework task for ECM1400 Comp Sci BSC University of Exeter.
