@@ -36,7 +36,7 @@ def placement_interface():
             json.dump(placement, file, indent=4)
         print('Finished with json')
         player_board = initialise_board(board_size)
-        place_battleships(player_board, player_ships, 'custom', 'web_placement.json')
+        place_battleships(player_board, player_ships, 'custom', 'Easy', 'web_placement.json')
         print('\nInitialised player_board and player_ships for player \n')
         #display_board(player_board)
 
