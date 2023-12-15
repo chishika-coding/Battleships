@@ -20,7 +20,7 @@ battleships\_project.tests.test\_helper\_functions module
    :undoc-members:
    :show-inheritance:
 
-battleships\_project.tests.test\_students module
+battleships\_project.tests.test_students module
 ------------------------------------------------
 
 .. automodule:: battleships_project.tests.test_students

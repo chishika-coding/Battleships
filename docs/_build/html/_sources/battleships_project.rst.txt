@@ -20,7 +20,7 @@ battleships\_project.components module
    :undoc-members:
    :show-inheritance:
 
-battleships\_project.game\_engine module
+battleships\_project.game_engine module
 ----------------------------------------
 
 .. automodule:: battleships_project.game_engine

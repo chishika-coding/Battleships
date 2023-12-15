@@ -2,7 +2,7 @@
 Game Engine used to create a draft of 1-player battleship with no opponent. 
 Functions from here are used in later modules
 '''
-from components import initialise_board, create_battleships, place_battleships, display_board
+from .components import initialise_board, create_battleships, place_battleships, display_board
 
 Boardtype = list[list[str | None]]
 

@@ -168,14 +168,98 @@ or not</p></li>
 </dd></dl>
 
 </section>
-<section id="battleships-project-game-engine-module">
-<h2>battleships_project.game_engine module<a class="headerlink" href="#battleships-project-game-engine-module" title="Link to this heading">¶</a></h2>
+<section id="module-battleships_project.game_engine">
+<span id="battleships-project-game-engine-module"></span><h2>battleships_project.game_engine module<a class="headerlink" href="#module-battleships_project.game_engine" title="Link to this heading">¶</a></h2>
+<p>Game Engine used to create a draft of 1-player battleship with no opponent. 
+Functions from here are used in later modules</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.game_engine.attack">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.game_engine.</span></span><span class="sig-name descname"><span class="pre">attack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">battleships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#battleships_project.game_engine.attack" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the board supplied to it has a battleship at tile the coordinates point to. 
+Returns true if hit and false if missed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> – a tuple of 2 integers that corresponds to a tile on the board</p></li>
+<li><p><strong>board</strong> – a list of lists used to simulate a grid.</p></li>
+<li><p><strong>battleships</strong> – dictionary a dictionary to hold the battleships and their lengths</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.game_engine.cli_coordinates_input">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.game_engine.</span></span><span class="sig-name descname"><span class="pre">cli_coordinates_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#battleships_project.game_engine.cli_coordinates_input" title="Link to this definition">¶</a></dt>
+<dd><p>Asks user to input coordinates for the location to attack. Checks if the
+supplied coordinates are valid and looping until they are before
+returning them as a tuple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – an integer to define size of the grid, defaults to 10</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.game_engine.simple_game_loop">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.game_engine.</span></span><span class="sig-name descname"><span class="pre">simple_game_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.game_engine.simple_game_loop" title="Link to this definition">¶</a></dt>
+<dd><p>Used for intermediate manual testing in the interface. Allows for a single player
+testing of the functions produced so far in a draft version.</p>
+</dd></dl>
+
 </section>
-<section id="battleships-project-main-module">
-<h2>battleships_project.main module<a class="headerlink" href="#battleships-project-main-module" title="Link to this heading">¶</a></h2>
+<section id="module-battleships_project.main">
+<span id="battleships-project-main-module"></span><h2>battleships_project.main module<a class="headerlink" href="#module-battleships_project.main" title="Link to this heading">¶</a></h2>
+<p>Battleships with Web Interface</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.main.placement_interface">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.main.</span></span><span class="sig-name descname"><span class="pre">placement_interface</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#battleships_project.main.placement_interface" title="Link to this definition">¶</a></dt>
+<dd><p>[GET] the template for the flask server and allows the use of a graphic interface to
+place ships on a board. Saves this placement.
+[POST] Opens the saved placements to start creating the player and computers boards
+and ships.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.main.process_attack">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.main.</span></span><span class="sig-name descname"><span class="pre">process_attack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#battleships_project.main.process_attack" title="Link to this definition">¶</a></dt>
+<dd><p>Processes the users attack from the grid and then processes the AIs attack, and
+returns a message updating the player and the boards with the attack. Also mentions 
+if game has been won or lost when finished.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.main.root">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.main.</span></span><span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#battleships_project.main.root" title="Link to this definition">¶</a></dt>
+<dd><p>Renders the main page of the program with the grids for the player to interact with.</p>
+</dd></dl>
+
 </section>
-<section id="battleships-project-mp-game-engine-module">
-<h2>battleships_project.mp_game_engine module<a class="headerlink" href="#battleships-project-mp-game-engine-module" title="Link to this heading">¶</a></h2>
+<section id="module-battleships_project.mp_game_engine">
+<span id="battleships-project-mp-game-engine-module"></span><h2>battleships_project.mp_game_engine module<a class="headerlink" href="#module-battleships_project.mp_game_engine" title="Link to this heading">¶</a></h2>
+<p>2 Player Battleships against the computer</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.mp_game_engine.ai_opponent_game_loop">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.mp_game_engine.</span></span><span class="sig-name descname"><span class="pre">ai_opponent_game_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.mp_game_engine.ai_opponent_game_loop" title="Link to this definition">¶</a></dt>
+<dd><p>Uses the functions to create and run the Battleship program against the computer.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.mp_game_engine.generate_attack">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.mp_game_engine.</span></span><span class="sig-name descname"><span class="pre">generate_attack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Easy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#battleships_project.mp_game_engine.generate_attack" title="Link to this definition">¶</a></dt>
+<dd><p>Generates x and y int values for computers turn and returns them as a tuple.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>algorithm</strong> – a string to determine the difficulty of the random placement,
+defaults to ‘Easy’</p></li>
+<li><p><strong>size</strong> – a integer to define size of the grid, defaults to 10</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-battleships_project">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-battleships_project" title="Link to this heading">¶</a></h2>
@@ -206,9 +290,9 @@ or not</p></li>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-battleships_project.components">battleships_project.components module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#battleships-project-game-engine-module">battleships_project.game_engine module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#battleships-project-main-module">battleships_project.main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#battleships-project-mp-game-engine-module">battleships_project.mp_game_engine module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-battleships_project.game_engine">battleships_project.game_engine module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-battleships_project.main">battleships_project.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-battleships_project.mp_game_engine">battleships_project.mp_game_engine module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-battleships_project">Module contents</a></li>
 </ul>
 </li>
