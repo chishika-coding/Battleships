@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>battleships_project package &#8212; Battleships 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="battleships_project.tests package" href="battleships_project.tests.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="battleships-project-package">
+<h1>battleships_project package<a class="headerlink" href="#battleships-project-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="battleships_project.tests.html">battleships_project.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="battleships_project.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battleships_project.tests.html#battleships-project-tests-test-functionality-module">battleships_project.tests.test_functionality module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battleships_project.tests.html#module-battleships_project.tests.test_helper_functions">battleships_project.tests.test_helper_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="battleships_project.tests.html#battleships_project.tests.test_helper_functions.TestReport"><code class="docutils literal notranslate"><span class="pre">TestReport</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="battleships_project.tests.html#battleships_project.tests.test_helper_functions.TestReport.add_message"><code class="docutils literal notranslate"><span class="pre">TestReport.add_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="battleships_project.tests.html#battleships_project.tests.test_helper_functions.is_dict_of_type"><code class="docutils literal notranslate"><span class="pre">is_dict_of_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="battleships_project.tests.html#battleships_project.tests.test_helper_functions.is_list_of_lists"><code class="docutils literal notranslate"><span class="pre">is_list_of_lists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="battleships_project.tests.html#battleships_project.tests.test_helper_functions.tuple_of_type"><code class="docutils literal notranslate"><span class="pre">tuple_of_type()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="battleships_project.tests.html#battleships-project-tests-test-students-module">battleships_project.tests.test_students module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battleships_project.tests.html#module-battleships_project.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-battleships_project.components">
+<span id="battleships-project-components-module"></span><h2>battleships_project.components module<a class="headerlink" href="#module-battleships_project.components" title="Link to this heading">¶</a></h2>
+<p>Core components the rest of the modules will import from.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.create_battleships">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">create_battleships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'battleships.txt'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#battleships_project.components.create_battleships" title="Link to this definition">¶</a></dt>
+<dd><p>Function used to create battleships based on the battleships.txt file and
+saves it as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Name of the text file, defaults to “battleships.txt”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.display_board">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">display_board</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.components.display_board" title="Link to this definition">¶</a></dt>
+<dd><p>Function used to check the board state in a visual manner using printlines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>board</strong> – a list of lists used to simulate a grid</p></li>
+<li><p><strong>size</strong> – a integer to define size of the grid, defaults to 10</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.initialise_board">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">initialise_board</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#battleships_project.components.initialise_board" title="Link to this definition">¶</a></dt>
+<dd><p>Function used to initial a board based on the size chosen. It creates a list of lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – an integer to define size of the grid, defaults to 10</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.place_battleships">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">place_battleships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'simple'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Easy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">battleshipjson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'placement.json'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#battleships_project.components.place_battleships" title="Link to this definition">¶</a></dt>
+<dd><p>Used to choose the right placement function to call</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>board</strong> – a list of lists used to simulate a grid</p></li>
+<li><p><strong>ships</strong> – a dictionary to hold the battleships and their lengths</p></li>
+<li><p><strong>style</strong> – a string to define what placement function is to be called,
+defaults to ‘simple’</p></li>
+<li><p><strong>algorithm</strong> – a string to determine the difficulty of the random placement,
+defaults to ‘Easy’</p></li>
+<li><p><strong>battleshipjson</strong> – a string to point towards the correct json file to use
+for custom placements, defaults to ‘placement.json’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.place_battleships_custom">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">place_battleships_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">battleshipjson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.components.place_battleships_custom" title="Link to this definition">¶</a></dt>
+<dd><p>Opens the json file specified by its parameters it to decide where 
+to place the battleships.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>board</strong> – a list of lists used to simulate a grid</p></li>
+<li><p><strong>ships</strong> – a dictionary to hold the battleships and their lengths</p></li>
+<li><p><strong>battleshipjson</strong> – a string to point towards the correct json file to use
+for custom placements, defaults to ‘placement.json’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.place_battleships_random">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">place_battleships_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.components.place_battleships_random" title="Link to this definition">¶</a></dt>
+<dd><p>Places the battleships in a random pattern inside the board. This has different
+difficulty levels chosen by the algorithm that makes the placements more strategic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>board</strong> – a list of lists used to simulate a grid</p></li>
+<li><p><strong>ships</strong> – a dictionary to hold the battleships and their lengths</p></li>
+<li><p><strong>algorithm</strong> – a string to determine whether to place ships more strategically
+or not</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="battleships_project.components.place_battleships_simple">
+<span class="sig-prename descclassname"><span class="pre">battleships_project.components.</span></span><span class="sig-name descname"><span class="pre">place_battleships_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ships</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#battleships_project.components.place_battleships_simple" title="Link to this definition">¶</a></dt>
+<dd><p>Places the battleships in a simple formation starting in the top left corner</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>board</strong> – a list of lists used to simulate a grid</p></li>
+<li><p><strong>ships</strong> – a dictionary to hold the battleships and their lengths</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="battleships-project-game-engine-module">
+<h2>battleships_project.game_engine module<a class="headerlink" href="#battleships-project-game-engine-module" title="Link to this heading">¶</a></h2>
+</section>
+<section id="battleships-project-main-module">
+<h2>battleships_project.main module<a class="headerlink" href="#battleships-project-main-module" title="Link to this heading">¶</a></h2>
+</section>
+<section id="battleships-project-mp-game-engine-module">
+<h2>battleships_project.mp_game_engine module<a class="headerlink" href="#battleships-project-mp-game-engine-module" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-battleships_project">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-battleships_project" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Battleships</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">battleships_project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">battleships_project package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-battleships_project.components">battleships_project.components module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#battleships-project-game-engine-module">battleships_project.game_engine module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#battleships-project-main-module">battleships_project.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#battleships-project-mp-game-engine-module">battleships_project.mp_game_engine module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-battleships_project">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="battleships_project.tests.html" title="previous chapter">battleships_project.tests package</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, jsngrg.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/battleships_project.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
