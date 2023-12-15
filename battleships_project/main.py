@@ -4,10 +4,10 @@ from flask import Flask, render_template, jsonify, request
 from mp_game_engine import (generate_attack, attack, initialise_board,
 place_battleships, create_battleships)
 
-board = []
-board2 = []
-ships = {}
-ships2 = {}
+player_board = []
+computer_board = []
+player_ships = {}
+computer_ships = {}
 
 
 app = Flask(__name__)
@@ -16,17 +16,18 @@ app = Flask(__name__)
 @app.route('/placement', methods = ['GET', 'POST'])
 def placement_interface():
     '''
-    The following # lines are all an alternative answer that requires a board.json file to
-    write to and read from later, but the global method seemed cleaner hence I used that 
-    instead.
+    [GET] the template for the flask server and allows the use of a graphic interface to
+    place ships on a board. Saves this placement.
+    [POST] Opens the saved placements to start creating the player and computers boards
+    and ships.
     '''
-    global board, ships, board2, ships2
-    ships = create_battleships()
+    global player_board, player_ships, computer_board, computer_ships
+    player_ships = create_battleships()
     board_size = 10
 
     if request.method == 'GET':
         print('\nGET Request to placement.html \n')
-        return render_template("placement.html", ships = ships, board_size = board_size)
+        return render_template("placement.html", ships = player_ships, board_size = board_size)
 
     if request.method == 'POST':
         placement = request.get_json()
@@ -34,18 +35,18 @@ def placement_interface():
         with open('web_placement.json', 'w', encoding="utf-8") as file:
             json.dump(placement, file, indent=4)
         print('Finished with json')
-        board = initialise_board(board_size)
-        place_battleships(board, ships, 'custom', 'web_placement.json')
-        print('\nInitialised board and ships for player \n')
-        #display_board(board)
+        player_board = initialise_board(board_size)
+        place_battleships(player_board, player_ships, 'custom', 'web_placement.json')
+        print('\nInitialised player_board and player_ships for player \n')
+        #display_board(player_board)
 
-        #with open('board.json', 'w') as file:
-            #json.dump(board, file, indent=1)
+        #with open('player_board.json', 'w') as file:
+            #json.dump(player_board, file, indent=1)
 
-        board2 = initialise_board(board_size)
-        ships2 = create_battleships()
-        place_battleships(board2, ships2, 'random')
-        print('\nInitialised board and ships for computer \n')
+        computer_board = initialise_board(board_size)
+        computer_ships = create_battleships()
+        place_battleships(computer_board, computer_ships, 'random')
+        print('\nInitialised player_board and player_ships for computer \n')
 
         return jsonify({"message": "Success"})
 
@@ -54,25 +55,26 @@ def placement_interface():
 @app.route('/attack', methods = ['GET'])
 def process_attack():
     '''
-    Hello
+    Processes the users attack from the grid and then processes the AIs attack, and
+    returns a message updating the player and the boards with the attack. Also mentions 
+    if game has been won or lost when finished.
     '''
-    print("hello")
     if request.args:
         x = request.args.get('x')
         y = request.args.get('y')
         coordinates = (x,y)
         print('\nPlayer selected', coordinates)
-        hit = attack(coordinates, board2, ships2)
-        
+        hit = attack(coordinates, computer_board, computer_ships)
+
         aicoordinates = generate_attack()
         print('\nComputer selected', aicoordinates)
-        attack(aicoordinates, board, ships)
-        
+        attack(aicoordinates, player_board, player_ships)
 
-        if ships2 == {}:
+
+        if computer_ships == {}:
             print('\nPlayer won')
             return jsonify ({"hit": hit, "AI_Turn": (aicoordinates), "finished": "VICTORY"})
-        if ships == {}:
+        if player_ships == {}:
             print('\nComputer won')
             return jsonify ({"hit": hit, "AI_Turn": (aicoordinates), "finished": "DEFEAT"})
 
@@ -83,14 +85,11 @@ def process_attack():
 @app.route('/', methods = ['GET'])
 def root():
     '''
-    hello
+    Renders the main page of the program with the grids for the player to interact with.
     '''
 
-    #with open('board.json', 'r') as file:
-                #board = json.load(file)
 
-
-    return render_template("main.html", player_board = board)
+    return render_template("main.html", player_board = player_board)
 
 
 

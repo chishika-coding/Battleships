@@ -2,22 +2,32 @@
 import random
 import json
 Boardtype = list[list[str | None]]
-def display_board(board: Boardtype) -> None:
-    ''' Function used to check the board state in a visual manner using printlines.'''
-    size = 10
+def display_board(board: Boardtype, size: int = 10) -> None:
+    ''' 
+    Function used to check the board state in a visual manner using printlines.
+
+    :param board: a list of lists used to simulate a grid
+    :param size: a integer to define size of the grid, defaults to 10
+    '''
     for row in board:
         print(' | '.join([' ' if cell is None else str(cell) for cell in row]))
         print('-' * (size * 4 - 1))
 
 def initialise_board(size: int = 10) -> Boardtype:
-    ''' Function used to initial a board based on the size chosen. It creates a list of lists.'''
+    ''' 
+    Function used to initial a board based on the size chosen. It creates a list of lists.
+    
+    :param size: an integer to define size of the grid, defaults to 10
+    '''
     board = [[None] * size for x in range(size)]
 
     return board
 
 def create_battleships(filename: str = "battleships.txt") -> dict[str, int]:
-    '''Function used to create battleships based on the battleships.txt file and
+    '''
+    Function used to create battleships based on the battleships.txt file and
     saves it as a dictionary.
+
     :param filename: Name of the text file, defaults to "battleships.txt"
     '''
     ships = {}
@@ -29,9 +39,20 @@ def create_battleships(filename: str = "battleships.txt") -> dict[str, int]:
 
 
 def place_battleships(board: Boardtype, ships: dict[str, int],
-                      style: str = "simple", algorithm: str = "Easy",
+                      style: str = 'simple', algorithm: str = "Easy",
                       battleshipjson: str = 'placement.json') -> Boardtype:
-    '''Used to choose the right placement function to call'''
+    '''
+    Used to choose the right placement function to call
+
+    :param board: a list of lists used to simulate a grid
+    :param ships: a dictionary to hold the battleships and their lengths
+    :param style: a string to define what placement function is to be called,
+        defaults to 'simple'
+    :param algorithm: a string to determine the difficulty of the random placement,
+        defaults to 'Easy'
+    :param battleshipjson: a string to point towards the correct json file to use
+        for custom placements, defaults to 'placement.json'
+    '''
 
     if style == 'simple':
         place_battleships_simple(board, ships)
@@ -43,7 +64,12 @@ def place_battleships(board: Boardtype, ships: dict[str, int],
     return board
 
 def place_battleships_simple(board: Boardtype, ships: dict[str, int]) -> None:
-    '''Places the battleships in a simple formation starting in the top left corner'''
+    '''
+    Places the battleships in a simple formation starting in the top left corner
+
+    :param board: a list of lists used to simulate a grid
+    :param ships: a dictionary to hold the battleships and their lengths
+    '''
 
     y = 0
     for current in ships:
@@ -56,6 +82,11 @@ def place_battleships_random(board: Boardtype, ships: dict[str, int],
     '''
     Places the battleships in a random pattern inside the board. This has different
     difficulty levels chosen by the algorithm that makes the placements more strategic.
+
+    :param board: a list of lists used to simulate a grid
+    :param ships: a dictionary to hold the battleships and their lengths
+    :param algorithm: a string to determine whether to place ships more strategically
+        or not
     '''
     size = len(board) - 1
 
@@ -132,7 +163,15 @@ def place_battleships_random(board: Boardtype, ships: dict[str, int],
 
 def place_battleships_custom(board: Boardtype, ships: dict[str, int],
                              battleshipjson: str) -> None:
-    '''Opens the placement.json and uses it to decide where to place the battleships'''
+    '''
+    Opens the json file specified by its parameters it to decide where 
+    to place the battleships.
+
+    :param board: a list of lists used to simulate a grid
+    :param ships: a dictionary to hold the battleships and their lengths
+    :param battleshipjson: a string to point towards the correct json file to use
+        for custom placements, defaults to 'placement.json'
+    '''
 
     with open(battleshipjson) as shipjson:
         shipfile = json.load(shipjson)

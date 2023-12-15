@@ -8,18 +8,21 @@ Boardtype = list[list[str | None]]
 
 def attack(coordinates: tuple[int, int], board: Boardtype, battleships: dict[str, int])-> bool:
     '''
-    Checks if the board supplied to it has a battleship at tile where the coordinates
-    point and if so removes 1 from the dictionary that contains the current ships.
-    If it decreases to 0 removes the key value pair entirely from the given
-    dictionary.
+    Checks if the board supplied to it has a battleship at tile the coordinates point to. 
+    Returns true if hit and false if missed.
+
+    :param coordinates: a tuple of 2 integers that corresponds to a tile on the board
+    :param board: a list of lists used to simulate a grid.
+    :param battleships: dictionary a dictionary to hold the battleships and their lengths
     '''
     x, y = int(coordinates[0]), int(coordinates[1])
     if board[y][x] is not None:
         print('\nHit!')
-
+        #Removes 1 from the dictionary that contains the current ships when hit
         battleships.update({board[y][x]: (battleships.get(board[y][x])-1)})
         if battleships.get(board[y][x]) == 0:
             print('\nBattleship Sunk!\n')
+            #If decreased to 0 removes the key value pair entirely from the dictionary
             battleships.pop(board[y][x])
         board[y][x] = None
         return True
@@ -32,6 +35,8 @@ def cli_coordinates_input(size: int = 10) -> tuple[int, int]:
     Asks user to input coordinates for the location to attack. Checks if the
     supplied coordinates are valid and looping until they are before
     returning them as a tuple.
+
+    :param size: an integer to define size of the grid, defaults to 10
     '''
     valid = False
     while not valid:

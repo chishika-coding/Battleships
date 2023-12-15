@@ -12,7 +12,11 @@ players = {'Player 1': [playerboard, playerships], 'Computer': [computerboard, c
 
 def generate_attack(algorithm: str = "Easy", size: int = 10) -> tuple[int, int]:
     '''
-    Generates x and y int values for computers turn.
+    Generates x and y int values for computers turn and returns them as a tuple.
+
+    :param algorithm: a string to determine the difficulty of the random placement,
+        defaults to 'Easy'
+    :param size: a integer to define size of the grid, defaults to 10
     '''
     global guesses
     validxy = False
